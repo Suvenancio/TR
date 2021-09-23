@@ -1,24 +1,40 @@
-import logo from './logo.svg';
 import './App.css';
+import Computador from './Pages/NovoComputador';
+import Emprestimos from './Pages/NovoEmpréstimos';
+import Estudante from './Pages/NovoEstudante';
+import { BrowserRouter, BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import EditaComputador from './Pages/EditaComputador';
+import MostraComputadores from './Pages/MostraComputadores';
+import MostraEstudante from './Pages/MostraEstudante';
+import MostraEmprestimos from './Pages/MostraEmprestimos';
+import Header from './components/Header';
+import EditaEstudante from './Pages/EditaEstudante';
+import EditaEmprestimo from './Pages/EditaEmprestimo';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+   
+   <BrowserRouter>
+     
+      <Header/>
+      
+        <Switch>
+  
+          <Route path="/estudantes" component={MostraEstudante} exact/>
+          <Route path="/emprestimos" component={MostraEmprestimos} exact/>
+          <Route exact path="/computadores" component={MostraComputadores} />
+          <Route exact path="/novoemprestimo" component={Emprestimos} />
+          <Route exact path="/novoestudante" component={Estudante} />
+          <Route exact path="/novocomputador" component={Computador} />
+          <Route exact path="/editacomputador/:numpatrimonio" component={EditaComputador} />
+          <Route exact path="/editaemprestimo/:id" component={EditaEmprestimo} />
+          <Route exact path="/editaestudante/:matricula" component={EditaEstudante} />
+        </Switch>
+
+      </BrowserRouter>
+   
+    </>
   );
 }
 
