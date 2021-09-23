@@ -10,6 +10,7 @@ import MostraEmprestimos from './Pages/MostraEmprestimos';
 import Header from './components/Header';
 import EditaEstudante from './Pages/EditaEstudante';
 import EditaEmprestimo from './Pages/EditaEmprestimo';
+import Home from './Pages/Home'
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
       <Header/>
       
         <Switch>
-  
+          <Route path="/" component={Home} exact />
           <Route path="/estudantes" component={MostraEstudante} exact/>
           <Route path="/emprestimos" component={MostraEmprestimos} exact/>
           <Route exact path="/computadores" component={MostraComputadores} />

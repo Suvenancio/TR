@@ -9,7 +9,7 @@ const Header = () => {
     return (
         <>
         <S.Header>
-            <img src={logo} />  
+            <img onClick={() => history.push('/')} src={logo} />  
             <S.Link onClick={() => history.push('/estudantes')}>Estudante</S.Link>
             <S.Link onClick={() => history.push('/computadores')}>Computadores</S.Link>
             <S.Link onClick={() => history.push('/emprestimos')}>Emprestimos</S.Link>
